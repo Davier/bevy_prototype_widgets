@@ -1,0 +1,38 @@
+[package]
+name = "bevy_prototype_widgets"
+version = "0.1.0"
+authors = ["Brice DAVIER <bricedavier@gmail.com>"]
+edition = "2018"
+
+# [features]
+# default = [
+#   "bevy/bevy_gltf",
+#   "bevy/bevy_winit",
+#   "bevy/render",
+#   "bevy/png",
+#   "bevy/bevy_gilrs",
+#   "bevy/hdr",
+#   "bevy/bevy_wgpu",
+#   "bevy/bevy_dynamic_plugin",
+#   "bevy/x11",
+#   "bevy/bevy_audio",
+#   "bevy/dynamic",
+# ]
+
+[dependencies]
+# bevy = { version = "0.5", default-features = false }
+bevy = { git = "https://github.com/Davier/bevy", branch = "prototype_widgets", features = ["dynamic"] }
+smallvec = "1.4"
+ron = "0.7.0"
+serde = "1.0"
+
+[patch.crates-io]
+# bevy = { path = "../bevy/" }
+
+[[example]]
+name = "todo_app"
+path = "examples/todo_app/main.rs"
+
+[[example]]
+name = "manual"
+path = "examples/manual.rs"
